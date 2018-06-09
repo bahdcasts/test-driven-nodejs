@@ -1,19 +1,14 @@
 const faker = require('faker')
-const supertest = require('supertest')
 
-const app = require('../src/index')
+const { generateTodo } = require('../utils/generate')
 const Todo = require('../src/database/models/Todo')
 
-const server = supertest(app)
+const server = require('../utils/setup')
 
 describe('the todo creation process', () => {
   test('can create a todo', async () => {
     // fake some todo data
-    const todo = {
-      title: faker.lorem.sentence(),
-      description: faker.lorem.sentences(3),
-      completed: false
-    }
+    const todo = generateTodo()
     // make POST request to server to create a todo
     const response = await server.post('/todos').send(todo)
 
