@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,10 @@
     "faker": "^4.1.0",
     "jest": "^23.1.0",
     "supertest": "^3.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.4"
   }
 }

@@ -22,9 +22,9 @@ describe('the todo creation process', () => {
     expect(response.body.message).toBe('Todo created successfully.')
     // assert the database has a new todo.
     const todoFromDatabase = await Todo.find({ title: todo.title })
-  
-    expect(todoFromDatabase.title).toBe(todo.title)
-    expect(todoFromDatabase.description).toBe(todo.description)
+
+    expect(todoFromDatabase[0].title).toBe(todo.title)
+    expect(todoFromDatabase[0].description).toBe(todo.description)
   })
 })
 
