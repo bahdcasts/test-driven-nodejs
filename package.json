@@ -25,5 +25,8 @@
     "express": "^4.16.3",
     "express-edge": "^1.0.0",
     "mongoose": "^5.1.4"
+  },
+  "jest": {
+    "testPathIgnorePatterns": ["<rootDir>/cypress"]
   }
 }

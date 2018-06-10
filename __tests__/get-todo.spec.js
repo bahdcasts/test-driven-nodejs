@@ -13,12 +13,9 @@ describe('get single todo', () => {
     // fetch todo
     const response = await server.get(`/todo/${createdTodo.id}`)
     // assert the todo is returned.
-    expect(response.body).toEqual({
-      title: todo.title,
-      description: todo.description,
-      completed: todo.completed,
-      id: expect.any(String)
-    })
+
+    expect(response.text).toMatch(todo.title)
+    expect(response.text).toMatch(todo.description)    
   })
 
   test('receives error message if todo was not found', async () => {

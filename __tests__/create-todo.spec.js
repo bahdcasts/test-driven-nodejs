@@ -12,10 +12,6 @@ describe('the todo creation process', () => {
     // make POST request to server to create a todo
     const response = await server.post('/todos').send(todo)
 
-    // assertions.
-    // assert response has a message.
-    expect(response.body.message).toBe('Todo created successfully.')
-    // assert the database has a new todo.
     const todoFromDatabase = await Todo.find({ title: todo.title })
 
     expect(todoFromDatabase[0].title).toBe(todo.title)
