@@ -5,6 +5,12 @@ module.exports = app => {
     res.render('create')
   })
 
+  app.post('/api/todos', async (req, res) => {
+    const todo = await Todo.create(req.body)
+
+    res.json(todo)
+  })
+
   app.get('/todo/:id', async (req, res) => {
     try {
       const todo = await Todo.findById(req.params.id)
