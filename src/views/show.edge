@@ -1,2 +1,6 @@
-<h1>{{ todo.title }}</h1>
-<p>{{ todo.description }}</p>
+@layout('layout')
+
+@section('body')
+<h1 class="text-center">{{ todo.title }}</h1>
+<p class="text-center text-muted">{{ todo.description }}</p>
+@endsection

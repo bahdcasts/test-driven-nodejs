@@ -8,8 +8,11 @@ describe('the create todo page', () => {
     cy.visit('http://localhost:3000/todos/new')
     const todo = generateTodo()
 
+    cy.get('h1').should('contain', 'Create a new todo.')
+    
     cy.get('#title').type(todo.title)
     cy.get('#description').type(todo.description)
+
 
     cy.get('button').should('contain', 'Create todo')
 

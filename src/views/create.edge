@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1>CREATE A TODO FOR ME</h1>
+@layout('layout')
 
-  <form action="/todos" method="POST">
-    <input type="text" name="title" id="title">
-    <textarea name="description" id="description" cols="30" rows="10"></textarea>
-    <button type="submit">Create todo</button>
-  </form>
-</body>
-</html>
+@section('body')
+  <h1 class="text-center">Create a new todo.</h1>
+  <div class="card">
+    <div class="card-body">
+      <form action="/todos" method="POST">
+        <input class="form-control mb-5" type="text" name="title" id="title">
+        <textarea class="form-control mb-5" name="description" id="description" cols="30" rows="10"></textarea>
+        <button class="btn btn-success" type="submit">Create todo</button>
+      </form>
+    </div>
+  </div>
+
+@endsection
