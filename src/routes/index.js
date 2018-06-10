@@ -9,7 +9,7 @@ module.exports = app => {
     try {
       const todo = await Todo.findById(req.params.id)
 
-      res.json(todo)
+      res.render('show', { todo })
     } catch (error) {
       return res.status(404).json({ message: 'Todo not found.' })
     }
@@ -18,8 +18,6 @@ module.exports = app => {
   app.post('/todos', async (req, res) => {
     const todo = await Todo.create(req.body)
   
-    res.json({
-      message: 'Todo created successfully.'
-    })
+    res.redirect(`/todo/${todo.id}`)
   })
 }

@@ -7,6 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>CREATE A TODO</h1>
+  <h1>CREATE A TODO FOR ME</h1>
+
+  <form action="/todos" method="POST">
+    <input type="text" name="title" id="title">
+    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+    <button type="submit">Create todo</button>
+  </form>
 </body>
 </html>
