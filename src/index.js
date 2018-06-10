@@ -7,6 +7,8 @@ const config = require('./config')
 
 const app = express()
 
+app.use(require('express-edge'))
+app.set('views', `${__dirname}/views`)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 

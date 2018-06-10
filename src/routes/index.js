@@ -1,6 +1,10 @@
 const Todo = require('../database/models/Todo')
 
 module.exports = app => {
+  app.get('/todos/new', (req, res) => {
+    res.render('create')
+  })
+
   app.get('/todo/:id', async (req, res) => {
     try {
       const todo = await Todo.findById(req.params.id)
